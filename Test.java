@@ -1,0 +1,107 @@
+import ADT.*;
+import SortingAlgo.*;
+
+public class Test {
+        public static void main(String[] args) {
+                System.out.println((-1) % 10);
+                String[] ar = { "2", "5", "1csd", "33", "4", "6", "9", "6", "5", "a" };
+                int maxLength = 0;
+                for (String temp : ar) {
+                        if (maxLength < temp.length()) {
+                                maxLength = temp.length();
+                        }
+                }
+                CQueue<String> cq = new CQueue<>(4);
+                for (int i = 0; i < 3; i++) {
+                        cq.enqueue(ar[i]);
+                        System.out.printf(
+                                        Ansi.FG_GREEN + "EnQ: " + Ansi.RESET + "%" + maxLength + "s" + Ansi.FG_GREEN
+                                                        + " | " + Ansi.RESET,
+                                        ar[i]);
+                        cq.printQueue();
+                }
+                while (cq.size() > 1) {
+                        System.out.printf(
+                                        Ansi.FG_BLUE + "DQ : " + Ansi.RESET + "%" + maxLength + "s" + Ansi.FG_BLUE +
+                                                        " | " + Ansi.RESET,
+                                        cq.dequeue());
+                        cq.printQueue();
+                }
+                for (int i = 3; i < 5; i++) {
+                        cq.enqueue(ar[i]);
+                        System.out.printf(
+                                        Ansi.FG_GREEN + "EnQ: " + Ansi.RESET + "%" + maxLength + "s" + Ansi.FG_GREEN
+                                                        + " | " + Ansi.RESET,
+                                        ar[i]);
+                        cq.printQueue();
+                }
+                while (cq.size() > 0) {
+                        System.out.printf(
+                                        Ansi.FG_BLUE + "DQ : " + Ansi.RESET + "%" + maxLength + "s" + Ansi.FG_BLUE +
+                                                        " | " + Ansi.RESET,
+                                        cq.dequeue());
+                        cq.printQueue();
+                }
+                for (String elem : ar) {
+                        cq.enqueue(elem);
+                        System.out.printf(
+                                        Ansi.FG_GREEN + "EnQ: " + Ansi.RESET + "%" + maxLength + "s" + Ansi.FG_GREEN
+                                                        + " | " + Ansi.RESET,
+                                        elem);
+                        cq.printQueue();
+                }
+                for (int i = cq.size(); i >= 0; i--) {
+                        System.out.printf(
+                                        Ansi.FG_BLUE + "DQ : " + Ansi.RESET + "%" + maxLength + "s" + Ansi.FG_BLUE +
+                                                        " | " + Ansi.RESET,
+                                        cq.dequeue());
+                        cq.printQueue();
+                }
+
+                // SLinkedList<String> ll = new SLinkedList<>();
+
+                // for (int i = 0; i < ar.length; i++) {
+                // System.out.printf(
+                // Ansi.FG_GREEN + "Insert: " + Ansi.RESET + "%s" + Ansi.FG_GREEN + " | " +
+                // Ansi.RESET,
+                // ar[i]);
+                // ll.append(ar[i]);
+                // ll.display();
+                // System.out.println();
+                // }
+                // for (int i = 3; i >= 0; i--) {
+                // ll.delete(i);
+                // ll.display();
+                // }
+
+                // System.out.println("begdel");
+                // ll.deleteBeginning();
+                // ll.display();
+
+                // System.out.println("enddel");
+                // ll.deleteEnding();
+                // ll.display();
+
+                // for (int i = 0; i < ar.length; i++) {
+                // System.out.printf(
+                // Ansi.FG_GREEN + "Insert: " + Ansi.RESET + "%s" + Ansi.FG_GREEN + " | " +
+                // Ansi.RESET,
+                // ar[i]);
+                // ll.append(ar[i]);
+                // ll.display();
+                // }
+
+                // // ll.clear();
+                // ll.display();
+                // System.out.println(ll.find("1csd"));
+                // System.out.println(ll.find("4"));
+                // System.out.println(ll.get(1));
+                // System.out.println(ll.get(5));
+                cq.bint("haha funny");
+                cq.bint();
+
+                // SLinkedList<Integer> ll= new SLinkedList<>();
+                // ll.append(2);
+                // System.out.println(ll.isEmpty());
+        }
+}
