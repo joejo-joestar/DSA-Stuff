@@ -1,16 +1,18 @@
-package ADT;
+package ADT.Queue;
 
 import java.util.*;
 
+import ADT.Ansi;
+
 // MARK: Circular Queue
 @SuppressWarnings("unchecked") // 🤡
-public final class QueueC<T> {
+public final class CQueue<T> {
     final T[] info;
     int front = 0; // inclusive
     int rear = 0; // exclusive
     final int maxSize;
 
-    public QueueC(int maxSize) {
+    public CQueue(int maxSize) {
         this.maxSize = maxSize;
 
         // creating an array of a generic is not allowed

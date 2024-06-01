@@ -1,16 +1,18 @@
-package ADT;
+package ADT.Queue;
 
 import java.util.*;
 
+import ADT.Ansi;
+
 // MARK: Queue
 @SuppressWarnings("unchecked") // 🤡
-public final class QueueL<T> {
+public final class LQueue<T> {
     final T[] info;
     final int maxSize;
     int front = 0; // inclusive
     int rear = 0; // exclusive
 
-    public QueueL(int maxSize) {
+    public LQueue(int maxSize) {
         this.maxSize = maxSize;
 
         // creating an array of a generic is not allowed

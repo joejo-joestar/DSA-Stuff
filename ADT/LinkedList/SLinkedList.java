@@ -1,7 +1,9 @@
-package ADT;
+package ADT.LinkedList;
+
+import ADT.Ansi;
 
 // MARK: Singly Linked List
-public final class LinkedListS<T> {
+public final class SLinkedList<T> {
     Node<T> head;
 
     // MARK: isEmpty()

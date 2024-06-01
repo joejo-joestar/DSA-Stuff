@@ -1,4 +1,4 @@
-package ADT;
+package ADT.LinkedList;
 
 // MARK: Node
 public final class Node<T> {

@@ -1,7 +1,9 @@
-package ADT;
+package ADT.LinkedList;
+
+import ADT.Ansi;
 
 // MARK: Doubly Linked List
-public final class LinkedListD<T> {
+public final class DLinkedList<T> {
     Node<T> head;
     // Node<T> tail;
 
@@ -177,8 +179,8 @@ public final class LinkedListD<T> {
     }
 
     // MARK: reverse()
-    public LinkedListD<T> reverse() {
-        LinkedListD<T> reverseList = this;
+    public DLinkedList<T> reverse() {
+        DLinkedList<T> reverseList = this;
         Node<T> cursor = head;
         while (cursor != null) {
             cursor = cursor.next;
