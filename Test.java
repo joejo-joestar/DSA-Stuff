@@ -1,5 +1,6 @@
 import ADT.*;
 // import SortingAlgo.*;
+import ADT.LinkedList.DLinkedList;
 
 public class Test {
         public static void main(String[] args) {
@@ -58,7 +59,7 @@ public class Test {
                 // cq.printQueue();
                 // }
 
-                LinkedListD<String> ll = new LinkedListD<>();
+                DLinkedList<String> ll = new DLinkedList<>();
 
                 for (int i = 0; i < ar.length; i++) {
                         System.out.printf(
@@ -99,20 +100,20 @@ public class Test {
                         ll.display();
                 }
 
-                LinkedListD<String> rev = ll.reverse();
+                DLinkedList<String> rev = ll.reverse();
                 System.out.println("reversed: ");
                 rev.display();
+
+                System.out.println(ll.find("1csd"));
+                System.out.println(ll.find("4"));
+                System.out.println(ll.get(1));
+                System.out.println(ll.get(5));
+                ll.bint("haha funny");
+                ll.bint();
 
                 ll.clear();
                 System.out.println("ll is ");
                 ll.display();
-                // System.out.println(ll.find("1csd"));
-                // System.out.println(ll.find("4"));
-                // System.out.println(ll.get(1));
-                // System.out.println(ll.get(5));
-                // cq.bint("haha funny");
-                // cq.bint();
-
                 // System.out.println(ll.isEmpty());
         }
 }
