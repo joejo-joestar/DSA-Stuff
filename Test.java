@@ -99,6 +99,10 @@ public class Test {
                         ll.display();
                 }
 
+                LinkedListD<String> rev = ll.reverse();
+                System.out.println("reversed: ");
+                rev.display();
+
                 ll.clear();
                 System.out.println("ll is ");
                 ll.display();

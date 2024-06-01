@@ -177,4 +177,13 @@ public final class LinkedListS<T> {
         System.out.println();
     }
 
+    // credits: (Yusra) @Sapphire-Starflower
+    // MARK: haha funni
+    public void bint() {
+        System.out.println("bogos binted!");
+    }
+
+    public void bint(String s) {
+        System.out.println(s);
+    }
 }

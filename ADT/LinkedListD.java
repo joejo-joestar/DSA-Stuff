@@ -148,6 +148,48 @@ public final class LinkedListD<T> {
         head = null;
     }
 
+    // MARK: find()
+    public int find(T elem) {
+        if (isEmpty()) {
+            return -1;
+        }
+        Node<T> currentNode = head;
+        int index = 0;
+        while (currentNode != null && !currentNode.info.equals(elem)) {
+            currentNode = currentNode.next;
+            index++;
+        }
+        return index;
+    }
+
+    // MARK: get()
+    public T get(int index) {
+        if (isEmpty()) {
+            return null;
+        }
+        Node<T> currentNode = head;
+        int count = 0;
+        while (currentNode != null && index != count) {
+            count++;
+            currentNode = currentNode.next;
+        }
+        return currentNode.info;
+    }
+
+    // MARK: reverse()
+    public LinkedListD<T> reverse() {
+        LinkedListD<T> reverseList = this;
+        Node<T> cursor = head;
+        while (cursor != null) {
+            cursor = cursor.next;
+        }
+        while (cursor != null) {
+            reverseList.append(cursor.info);
+            cursor = cursor.previous;
+        }
+        return reverseList;
+    }
+
     // MARK: display
     // TODO: pretty print
     public void display() {
@@ -159,4 +201,13 @@ public final class LinkedListD<T> {
         System.out.println();
     }
 
+    // credits: (Yusra) @Sapphire-Starflower
+    // MARK: haha funni
+    public void bint() {
+        System.out.println("bogos binted!");
+    }
+
+    public void bint(String s) {
+        System.out.println(s);
+    }
 }
