@@ -2,15 +2,15 @@ package ADT;
 
 import java.util.*;
 
-// MARK: Queue
+// MARK: Circular Queue
 @SuppressWarnings("unchecked") // 🤡
-public final class LQueue<T> {
+public final class QueueC<T> {
     final T[] info;
-    final int maxSize;
     int front = 0; // inclusive
     int rear = 0; // exclusive
+    final int maxSize;
 
-    public LQueue(int maxSize) {
+    public QueueC(int maxSize) {
         this.maxSize = maxSize;
 
         // creating an array of a generic is not allowed
@@ -20,37 +20,40 @@ public final class LQueue<T> {
         for (int i = 0; i < maxSize; i++) {
             temp.add(null);
         }
-
         info = (T[]) temp.toArray();
     }
 
-    // MARK: Queue: isEmpty()
+    // MARK: isEmpty()
     public boolean isEmpty() {
         return (front == rear);
     }
 
-    // MARK: Queue: isFull()
-    public boolean isFull() {
-        return (rear == maxSize);
-    }
-
-    // MARK: Queue: size()
+    // MARK: size()
     public int size() {
-        return (rear - front);
+        if (!isEmpty()) {
+            return ((maxSize - front + rear) % maxSize);
+        }
+        return 0;
     }
 
-    // MARK: Queue: enqueue()
+    // MARK: isFull()
+    public boolean isFull() {
+        return (size() == maxSize);
+    }
+
+    // MARK: enqueue()
     public void enqueue(T elem) {
         // Overflow Condition
         if (isFull()) {
-            System.out.println(Ansi.FG_BRIGHT_RED + "Queue is Full" + Ansi.RESET);
+            System.out.println(Ansi.FG_BRIGHT_RED + "Circular Queue is Full" + Ansi.RESET);
             return;
+        } else {
+            info[rear] = elem;
+            rear = (rear + 1) % maxSize;
         }
-        info[rear] = elem;
-        rear++;
     }
 
-    // MARK: Queue: peek()
+    // MARK: peek()
     public T peek() {
         if (!isEmpty()) {
             return info[front];
@@ -58,31 +61,27 @@ public final class LQueue<T> {
         return null;
     }
 
-    // MARK: Queue: dequeue()
+    // MARK: dequeue()
     public T dequeue() {
+        T temp = null;
         // Underflow Condition
         if (isEmpty()) {
-            System.out.println(Ansi.FG_BRIGHT_RED + "Queue is Empty" + Ansi.RESET);
-            return null;
-        }
-        T temp = this.info[front];
-        front++;
-        if (isEmpty()) {
-            // reset front and rear back to 0, so that we start with a
-            // fresh empty queue with full capacity
-            rear = 0;
-            front = 0;
+            System.out.println(Ansi.FG_BRIGHT_RED + "Circular Queue is Empty" + Ansi.RESET);
+        } else {
+            temp = this.info[front];
+            front = (front + 1) % maxSize;
         }
         return temp;
     }
 
-    // MARK: Queue: printQueue()
+    // TODO: finish printing
+    // MARK: printQueue()
     public void printQueue() {
         // for displaying front and rear of queue
         int maxDigits = String.valueOf(maxSize).length();
         System.out.printf(
                 Ansi.FG_BRIGHT_CYAN + "[" + Ansi.FG_BRIGHT_YELLOW + "front = %" + ((maxDigits >= 2) ? maxDigits : 2)
-                        + "s " + Ansi.FG_BRIGHT_CYAN + " | " + Ansi.FG_BRIGHT_YELLOW
+                        + "s "
                         + "rear  = %" + ((maxDigits >= 2) ? maxDigits : 2)
                         + "s"
                         + Ansi.FG_BRIGHT_CYAN + "] "
@@ -92,13 +91,13 @@ public final class LQueue<T> {
 
         // displaying elements
         String separator = Ansi.FG_YELLOW + ", " + Ansi.RESET;
-        for (int i = front; i < rear - 1; i++) {
+        for (int i = front; i < ((rear - 2 + maxSize) % maxSize); i = ((i + 1) % maxSize)) {
             System.out.print(info[i] + separator);
         }
-        if (rear <= 0) {
+        if (isEmpty()) {
             System.out.println(Ansi.FG_BRIGHT_GREEN + "]" + Ansi.RESET);
         } else {
-            System.out.println(info[rear - 1] + Ansi.FG_BRIGHT_GREEN + "]" + Ansi.RESET);
+            System.out.println(info[(rear - 1 + maxSize) % maxSize] + Ansi.FG_BRIGHT_GREEN + "]" + Ansi.RESET);
         }
     }
 

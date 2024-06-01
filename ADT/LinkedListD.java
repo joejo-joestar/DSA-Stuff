@@ -1,8 +1,9 @@
 package ADT;
 
-// MARK: Singly Linked List
-public final class SLinkedList<T> {
+// MARK: Doubly Linked List
+public final class LinkedListD<T> {
     Node<T> head;
+    // Node<T> tail;
 
     // MARK: isEmpty()
     public boolean isEmpty() {
@@ -37,15 +38,22 @@ public final class SLinkedList<T> {
                 cursor = cursor.next;
             }
             cursor.next = newNode;
+            newNode.previous = cursor;
         }
     }
 
-    // MARK: insertBeginning()
-    public void insertBeginning(T info) {
+    // MARK: prepend()
+    public void prepend(T info) {
         Node<T> newNode = new Node<>(info);
-        newNode.next = head;
-        head = newNode;
-
+        // Create first Node
+        if (isEmpty()) {
+            head = newNode;
+        }
+        // Insert at the beginning
+        else {
+            newNode.next = head;
+            head = newNode;
+        }
     }
 
     // MARK: insert()
@@ -57,7 +65,7 @@ public final class SLinkedList<T> {
         }
         // Insert in beginning or at index 0
         else if (index <= 0) {
-            insertBeginning(info);
+            prepend(info);
         }
         // Insert at the end (at index = size() - 1)
         else if (index > size()) {
@@ -71,8 +79,10 @@ public final class SLinkedList<T> {
                 count++;
                 cursor = cursor.next;
             }
+            cursor.previous.next = newNode;
             newNode.next = cursor;
-            cursor = newNode;
+            newNode.previous = cursor.previous;
+            cursor.previous = newNode;
         }
     }
 
@@ -81,10 +91,13 @@ public final class SLinkedList<T> {
         Node<T> currentNode = head;
         if (!isEmpty()) {
             head = currentNode.next;
+        } else {
+            System.out.println(Ansi.FG_BRIGHT_RED + "Linked List is Empty" + Ansi.RESET);
+            return;
         }
     }
 
-    // MARK: deleteEnding()
+    // MARK: deleteEnd()
     public void deleteEnding() {
         Node<T> currentNode = head;
         if (isEmpty()) {
@@ -97,11 +110,11 @@ public final class SLinkedList<T> {
             while (currentNode.next.next != null) {
                 currentNode = currentNode.next;
             }
+            currentNode.next.previous = currentNode;
             currentNode.next = null;
         }
     }
 
-    // MARK: delete()
     public void delete(int index) {
         Node<T> currentNode = head;
         int count = 0;
@@ -119,6 +132,7 @@ public final class SLinkedList<T> {
                 currentNode = currentNode.next;
             }
             currentNode.next = currentNode.next.next;
+            currentNode.next.previous = currentNode;
         }
     }
 
@@ -127,44 +141,14 @@ public final class SLinkedList<T> {
         Node<T> currentNode = head;
         Node<T> temp = currentNode.next;
         while (currentNode != null) {
-            currentNode.next = currentNode = temp;
+            temp = currentNode.next;
+            currentNode.next = null;
+            currentNode = temp;
         }
         head = null;
     }
 
-    // MARK: find()
-    public int find(T elem) {
-        if (isEmpty()) {
-            return -1;
-        }
-        Node<T> currentNode = head;
-        int index = 0;
-        while (currentNode != null && !currentNode.info.equals(elem)) {
-            currentNode = currentNode.next;
-            index++;
-        }
-        return index;
-    }
-
-    // MARK: get()
-    public T get(int index) {
-        if (isEmpty()) {
-            return null;
-        }
-        Node<T> currentNode = head;
-        int count = 0;
-        while (currentNode != null && index != count) {
-            count++;
-            currentNode = currentNode.next;
-        }
-        return currentNode.info;
-    }
-
-    // MARK: reverse()
-    public void reverse() {
-        // TODO: implement
-    }
-
+    // MARK: display
     // TODO: pretty print
     public void display() {
         Node<T> currentNode = head;
