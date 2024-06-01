@@ -179,13 +179,18 @@ public final class DLinkedList<T> {
     }
 
     // MARK: reverse()
+
+    /**
+     * the reverse() method returns a
+     * new linked list with reversed elements
+     */
     public DLinkedList<T> reverse() {
-        DLinkedList<T> reverseList = this;
+        DLinkedList<T> reverseList = new DLinkedList<>();
         Node<T> cursor = head;
-        while (cursor != null) {
+        while (cursor.next != null) {
             cursor = cursor.next;
         }
-        while (cursor != null) {
+        while (cursor.next != head) {
             reverseList.append(cursor.info);
             cursor = cursor.previous;
         }
