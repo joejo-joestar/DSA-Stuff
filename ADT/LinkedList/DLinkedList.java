@@ -88,7 +88,8 @@ public final class DLinkedList<T> {
      * @param index is the position to insert info at (indexing used in linked list
      *              is zero indexing). If<br>
      *              1. index is less than, or equal to 0, {@link #prepend()}<br>
-     *              2. index is bigger than size of current Linked List, {@link #append(T)}
+     *              2. index is bigger than size of current Linked List,
+     *              {@link #append(T)}
      */
     public void insert(T info, int index) {
         Node<T> newNode = new Node<>(info);
@@ -279,7 +280,6 @@ public final class DLinkedList<T> {
     }
 
     // MARK: haha funni
-    // MARK: haha funni
     /**
      * A very important method that is vital for all the above methods
      *
@@ -287,8 +287,7 @@ public final class DLinkedList<T> {
      *         <a href=
      *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
      */
-
-     public void bint() {
+    public void bint() {
         System.out.println("bogos binted!");
     }
 

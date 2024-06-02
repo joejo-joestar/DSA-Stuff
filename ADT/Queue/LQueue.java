@@ -13,13 +13,19 @@ public final class LQueue<T> {
     int rear = 0; // exclusive
 
     /**
-     * Constructor to Create an array implemented Circular Queue of a given
+     * Constructor to Create an array implemented Queue of a given
      * size.
      * <p>
      * This constructor first creates and ArrayList and then
      * converts it to an Array using the ArrayList.toArray()
+     * <p>
      *
-     * @param maxSize is the maximum size of the Circular Queue
+     * @param maxSize is the maximum size of the Queue
+     * @author (Sreenikethan I)
+     *         <a href="https://github.com/SreenikethanI">@SreenikethanI</a>
+     * @author (Joseph Cijo)
+     *         <a href="https://github.com/joejo-joestar">@joejo-joestar</a>
+     *
      */
     public LQueue(int maxSize) {
         this.maxSize = maxSize;
@@ -68,9 +74,9 @@ public final class LQueue<T> {
 
     // MARK: enqueue()
     /**
-     * Inserting (Enqueueing) element into the rear of the Circular Queue.
+     * Inserting (Enqueueing) element into the rear of the Queue.
      * <p>
-     * <strong>Here, rear is an index.</strong>
+     * <strong>Here, rear is not an index.</strong>
      * <p>
      *
      * @param elem the element to enqueue
@@ -133,7 +139,7 @@ public final class LQueue<T> {
      *
      * Prints the Queue wih front and rear indices in Ansi colors.
      * <p>
-     * Print Format: [front = i rear = j] [e1 , e2, e3...]
+     * Print Format: [front = i | rear = j] [e1 , e2, e3...]
      *
      */
 
@@ -170,8 +176,7 @@ public final class LQueue<T> {
      *         <a href=
      *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
      */
-
-     public void bint() {
+    public void bint() {
         System.out.println("bogos binted!");
     }
 

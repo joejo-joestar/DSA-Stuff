@@ -22,7 +22,7 @@ public final class CQueue<T> {
      * @param maxSize is the maximum size of the Circular Queue
      * @author (Sreenikethan I)
      *         <a href="https://github.com/SreenikethanI">@SreenikethanI</a>
-     *         (Joseph Cijo)
+     * @author (Joseph Cijo)
      *         <a href="https://github.com/joejo-joestar">@joejo-joestar</a>
      *
      */
@@ -141,8 +141,8 @@ public final class CQueue<T> {
         return temp;
     }
 
-    // TODO: finish printing
     // MARK: printQueue()
+    // TODO: finish printing
     /**
      *
      * Prints the Queue wih front and rear indices in Ansi colors.
@@ -183,7 +183,6 @@ public final class CQueue<T> {
      *         <a href=
      *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
      */
-
     public void bint() {
         System.out.println("bogos binted!");
     }

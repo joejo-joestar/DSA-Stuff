@@ -9,6 +9,22 @@ public final class Stack<T> {
     final int maxSize;
     int top = -1; // inclusive
 
+    /**
+     * Constructor to Create an array implemented Stack of a given
+     * size.
+     * <p>
+     * This constructor first creates and ArrayList and then
+     * converts it to an Array using the ArrayList.toArray()
+     * <p>
+     *
+     * @param maxSize is the maximum size of the Stack
+     * @author (Sreenikethan I)
+     *         <a href="https://github.com/SreenikethanI">@SreenikethanI</a>
+     * @author (Joseph Cijo)
+     *         <a href="https://github.com/joejo-joestar">@joejo-joestar</a>
+     *
+     */
+
     public Stack(int maxSize) {
         this.maxSize = maxSize;
 
@@ -89,12 +105,28 @@ public final class Stack<T> {
         System.out.println();
     }
 
-    // credits: (Yusra) @Sapphire-Starflower
     // MARK: haha funni
+    /**
+     * A very important method that is vital for all the above methods
+     *
+     * @author (Yusra)
+     *         <a href=
+     *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
+     */
     public void bint() {
         System.out.println("bogos binted!");
     }
 
+    /**
+     * Another very important method that is vital for all the above methods
+     *
+     * @param s is the string required for the functioning of this method
+     *
+     * @author (Yusra)
+     *         <a href=
+     *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
+     *
+     */
     public void bint(String s) {
         System.out.println(s);
     }

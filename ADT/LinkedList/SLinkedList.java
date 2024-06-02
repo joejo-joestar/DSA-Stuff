@@ -267,7 +267,6 @@ public final class SLinkedList<T> {
         System.out.println();
     }
 
-    // credits: (Yusra) @Sapphire-Starflower
     // MARK: haha funni
     /**
      * A very important method that is vital for all the above methods

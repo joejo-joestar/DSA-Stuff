@@ -1,5 +1,8 @@
 {
     "[java]": {
         "editor.renderWhitespace": "trailing"
-    }
+    },
+    "cSpell.words": [
+        "joejojoestar"
+    ]
 }
