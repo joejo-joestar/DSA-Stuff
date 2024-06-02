@@ -5,8 +5,8 @@
 
 
 # 📋To Do:
-[] Add Javadoc comments in all files
-[] Pretty Print for all Data types
-[] Searching Algorithms for Generics
-[] Sorting Algorithms for Generics
-[] Sample Program
+- [ ] Add Javadoc comments in all files
+- [ ] Pretty Print for all Data types
+- [ ] Searching Algorithms for Generics
+- [ ] Sorting Algorithms for Generics
+- [ ] Sample Program
