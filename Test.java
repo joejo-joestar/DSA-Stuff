@@ -1,6 +1,7 @@
 import ADT.*;
 // import SortingAlgo.*;
-import ADT.LinkedList.DLinkedList;
+// import ADT.LinkedList.DLinkedList;
+import ADT.LinkedList.SLinkedList;
 
 public class Test {
         public static void main(String[] args) {
@@ -59,7 +60,7 @@ public class Test {
                 // cq.printQueue();
                 // }
 
-                DLinkedList<String> ll = new DLinkedList<>();
+                SLinkedList<String> ll = new SLinkedList<>();
 
                 for (int i = 0; i < ar.length; i++) {
                         System.out.printf(
@@ -80,7 +81,7 @@ public class Test {
                                                 Ansi.RESET,
                                 "gs", 4);
                 ll.insert("gs", 4);
-                // ll.prepend("gs");
+                ll.prepend("gs");
                 ll.display();
 
                 System.out.println("begdel");
@@ -100,7 +101,7 @@ public class Test {
                         ll.display();
                 }
 
-                DLinkedList<String> rev = ll.reverse();
+                SLinkedList<String> rev = ll.reverse();
                 System.out.println("reversed: ");
                 rev.display();
 
@@ -111,9 +112,9 @@ public class Test {
                 ll.bint("haha funny");
                 ll.bint();
 
-                ll.clear();
-                System.out.println("ll is ");
-                ll.display();
+                // ll.clear();
+                // System.out.println("ll is ");
+                // ll.display();
                 // System.out.println(ll.isEmpty());
         }
 }

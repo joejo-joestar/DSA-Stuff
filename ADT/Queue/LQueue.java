@@ -12,6 +12,15 @@ public final class LQueue<T> {
     int front = 0; // inclusive
     int rear = 0; // exclusive
 
+    /**
+     * Constructor to Create an array implemented Circular Queue of a given
+     * size.
+     * <p>
+     * This constructor first creates and ArrayList and then
+     * converts it to an Array using the ArrayList.toArray()
+     *
+     * @param maxSize is the maximum size of the Circular Queue
+     */
     public LQueue(int maxSize) {
         this.maxSize = maxSize;
 
@@ -26,22 +35,46 @@ public final class LQueue<T> {
         info = (T[]) temp.toArray();
     }
 
-    // MARK: Queue: isEmpty()
+    // MARK: isEmpty()
+    /**
+     * Checks if front and rear are at the same index
+     * ie, Queue is Empty
+     *
+     * @return true if empty and false if not
+     */
     public boolean isEmpty() {
         return (front == rear);
     }
 
-    // MARK: Queue: isFull()
+    // MARK: isFull()
+    /**
+     * Simply checks if the current Queue is Full or Not
+     *
+     * @return true if empty and false if not
+     */
     public boolean isFull() {
         return (rear == maxSize);
     }
 
-    // MARK: Queue: size()
+    // MARK: size()
+    /**
+     * Returns current size of Queue
+     *
+     * @return current size of Queue
+     */
     public int size() {
         return (rear - front);
     }
 
-    // MARK: Queue: enqueue()
+    // MARK: enqueue()
+    /**
+     * Inserting (Enqueueing) element into the rear of the Circular Queue.
+     * <p>
+     * <strong>Here, rear is an index.</strong>
+     * <p>
+     *
+     * @param elem the element to enqueue
+     */
     public void enqueue(T elem) {
         // Overflow Condition
         if (isFull()) {
@@ -52,7 +85,15 @@ public final class LQueue<T> {
         rear++;
     }
 
-    // MARK: Queue: peek()
+    // MARK: peek()
+    /**
+     * Shows the element that will be dequeued next (element at front)
+     * <p>
+     * <strong>Here, front is an index.</strong>
+     *
+     * @return the element at front
+     */
+
     public T peek() {
         if (!isEmpty()) {
             return info[front];
@@ -60,7 +101,16 @@ public final class LQueue<T> {
         return null;
     }
 
-    // MARK: Queue: dequeue()
+    // MARK: dequeue()
+    /**
+     * Shows the element at front and removes it from the queue.
+     * <p>
+     * <strong>Here, front is an index.</strong>
+     * <p>
+     *
+     * @return the element at front
+     */
+
     public T dequeue() {
         // Underflow Condition
         if (isEmpty()) {
@@ -78,7 +128,15 @@ public final class LQueue<T> {
         return temp;
     }
 
-    // MARK: Queue: printQueue()
+    // MARK: printQueue()
+    /**
+     *
+     * Prints the Queue wih front and rear indices in Ansi colors.
+     * <p>
+     * Print Format: [front = i rear = j] [e1 , e2, e3...]
+     *
+     */
+
     public void printQueue() {
         // for displaying front and rear of queue
         int maxDigits = String.valueOf(maxSize).length();
@@ -105,10 +163,28 @@ public final class LQueue<T> {
     }
 
     // MARK: haha funni
-    public void bint() {
+    /**
+     * A very important method that is vital for all the above methods
+     *
+     * @author (Yusra)
+     *         <a href=
+     *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
+     */
+
+     public void bint() {
         System.out.println("bogos binted!");
     }
 
+    /**
+     * Another very important method that is vital for all the above methods
+     *
+     * @param s is the string required for the functioning of this method
+     *
+     * @author (Yusra)
+     *         <a href=
+     *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
+     *
+     */
     public void bint(String s) {
         System.out.println(s);
     }

@@ -5,14 +5,25 @@ import ADT.Ansi;
 // MARK: Doubly Linked List
 public final class DLinkedList<T> {
     Node<T> head;
-    // Node<T> tail;
 
     // MARK: isEmpty()
+    /**
+     * Checks if head is NULL
+     * ie, Linked List is Empty
+     *
+     * @return true if empty and false if not
+     */
     public boolean isEmpty() {
         return (head == null);
     }
 
     // MARK: size()
+    /**
+     * Counts the number of nodes by
+     * iterating throughout the Linked List
+     *
+     * @return count of nodes
+     */
     public int size() {
         if (isEmpty()) {
             return 0;
@@ -27,6 +38,12 @@ public final class DLinkedList<T> {
     }
 
     // MARK: append()
+    /**
+     * Adds a node to the end of
+     * the Linked List after iterating through it
+     *
+     * @param info is the info needed to be stored in the Linked List
+     */
     public void append(T info) {
         Node<T> newNode = new Node<>(info);
         // Create first Node
@@ -45,6 +62,11 @@ public final class DLinkedList<T> {
     }
 
     // MARK: prepend()
+    /**
+     * Adds a node to the beginning of the Linked List
+     *
+     * @param info is the info needed to be stored in the Linked List
+     */
     public void prepend(T info) {
         Node<T> newNode = new Node<>(info);
         // Create first Node
@@ -59,6 +81,15 @@ public final class DLinkedList<T> {
     }
 
     // MARK: insert()
+    /**
+     * Adds a node at a specified index
+     *
+     * @param info  is the info needed to be stored in the Linked List
+     * @param index is the position to insert info at (indexing used in linked list
+     *              is zero indexing). If<br>
+     *              1. index is less than, or equal to 0, {@link #prepend()}<br>
+     *              2. index is bigger than size of current Linked List, {@link #append(T)}
+     */
     public void insert(T info, int index) {
         Node<T> newNode = new Node<>(info);
         // Create first Node
@@ -89,6 +120,9 @@ public final class DLinkedList<T> {
     }
 
     // MARK: deleteBeginning()
+    /**
+     * Deletes the very first node of the Linked List
+     */
     public void deleteBeginning() {
         Node<T> currentNode = head;
         if (!isEmpty()) {
@@ -100,6 +134,9 @@ public final class DLinkedList<T> {
     }
 
     // MARK: deleteEnd()
+    /**
+     * Deletes the very last node of the Linked List
+     */
     public void deleteEnding() {
         Node<T> currentNode = head;
         if (isEmpty()) {
@@ -117,6 +154,17 @@ public final class DLinkedList<T> {
         }
     }
 
+    // MARK: delete()
+    /**
+     * Deletes the node at a given index the Linked List
+     *
+     * @param index is the position to insert info at (indexing used in linked list
+     *              is zero indexing). If<br>
+     *              1. index is less than, or equal 0,
+     *              {@link #deleteBeginning()}<br>
+     *              2. index is bigger than size of current Linked List,
+     *              {@link #deleteEnding()}
+     */
     public void delete(int index) {
         Node<T> currentNode = head;
         int count = 0;
@@ -139,6 +187,9 @@ public final class DLinkedList<T> {
     }
 
     // MARK: clear()
+    /**
+     * Empties the current Linked List by setting all nodes to NULL
+     */
     public void clear() {
         Node<T> currentNode = head;
         Node<T> temp = currentNode.next;
@@ -151,6 +202,13 @@ public final class DLinkedList<T> {
     }
 
     // MARK: find()
+    /**
+     * Searches for elem by iterating through Linked List
+     *
+     * @param elem is the element to search for
+     * @return index of the required node and
+     *         -1 if elem does not exist in Linked List
+     */
     public int find(T elem) {
         if (isEmpty()) {
             return -1;
@@ -165,6 +223,13 @@ public final class DLinkedList<T> {
     }
 
     // MARK: get()
+    /**
+     * Returns element at specified index by iterating
+     * through Linked List
+     *
+     * @param index is the index of node to get
+     * @return element at specified index
+     */
     public T get(int index) {
         if (isEmpty()) {
             return null;
@@ -179,10 +244,12 @@ public final class DLinkedList<T> {
     }
 
     // MARK: reverse()
-
     /**
-     * the reverse() method returns a
-     * new linked list with reversed elements
+     * Iterates through current Linked List and
+     * and appends the elements in a new
+     * Linked List in the reverse order
+     *
+     * @return Reversed {@link #DLinkedList}
      */
     public DLinkedList<T> reverse() {
         DLinkedList<T> reverseList = new DLinkedList<>();
@@ -198,6 +265,9 @@ public final class DLinkedList<T> {
     }
 
     // MARK: display
+    /**
+     * Prints the nodes of current Linked List
+     */
     // TODO: pretty print
     public void display() {
         Node<T> currentNode = head;
@@ -208,12 +278,30 @@ public final class DLinkedList<T> {
         System.out.println();
     }
 
-    // credits: (Yusra) @Sapphire-Starflower
     // MARK: haha funni
-    public void bint() {
+    // MARK: haha funni
+    /**
+     * A very important method that is vital for all the above methods
+     *
+     * @author (Yusra)
+     *         <a href=
+     *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
+     */
+
+     public void bint() {
         System.out.println("bogos binted!");
     }
 
+    /**
+     * Another very important method that is vital for all the above methods
+     *
+     * @param s is the string required for the functioning of this method
+     *
+     * @author (Yusra)
+     *         <a href=
+     *         "https://github.com/Sapphire-Starflower">@Sapphire-Starflower</a>
+     *
+     */
     public void bint(String s) {
         System.out.println(s);
     }
