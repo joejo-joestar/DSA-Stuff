@@ -142,10 +142,9 @@ public final class CQueue<T> {
     }
 
     // MARK: printQueue()
-    // TODO: finish printing
     /**
      *
-     * Prints the Queue wih front and rear indices in Ansi colors.
+     * Prints the Queue with front and rear indices in Ansi colors.
      * <p>
      * Print Format: [front = i | rear = j] [e1 , e2, e3...]
      *
@@ -165,14 +164,10 @@ public final class CQueue<T> {
 
         // displaying elements
         String separator = Ansi.FG_YELLOW + ", " + Ansi.RESET;
-        for (int i = front; i < ((rear - 2 + maxSize) % maxSize); i = ((i + 1) % maxSize)) {
+        for (int i = front; i != rear; i = (i + 1) % maxSize) {
             System.out.print(info[i] + separator);
         }
-        if (isEmpty()) {
-            System.out.println(Ansi.FG_BRIGHT_GREEN + "]" + Ansi.RESET);
-        } else {
-            System.out.println(info[(rear - 1 + maxSize) % maxSize] + Ansi.FG_BRIGHT_GREEN + "]" + Ansi.RESET);
-        }
+        System.out.println(Ansi.FG_BRIGHT_GREEN + "]" + Ansi.RESET);
     }
 
     // MARK: haha funni
