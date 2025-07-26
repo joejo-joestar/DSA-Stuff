@@ -4,13 +4,18 @@
 
 <h2 align="center">⚠️<em>This is still a work in progress!!</em>⚠️</h2>
 
+<p align = "center">
+  <img src=".assets/pixcodingcar.png" alt="Coding Car" title="Coding Car" width="128">
+</p
 
+<br>
 
-# DSA-Stuff
+<h1 align="center">DSA-Stuff</h1>
+
  DSA Related Codes like ADTs, Searching and Sorting Algos
 
+# 📋To Do
 
-# 📋To Do:
 - [ ] Add Javadoc comments in all files
 - [ ] Pretty Print for all Data types
 - [ ] Searching Algorithms for Generics
