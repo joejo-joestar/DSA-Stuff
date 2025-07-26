@@ -29,8 +29,3 @@
 - Created and maintained primarily by Joseph Cijo ([@joejo-joestar](https://github.com/joejo-joestar))
 - Additional contributions by Sreenikethan I ([@SreenikethanI](https://github.com/SreenikethanI))
 - Additional contributions by Yusra Hakim ([@Sapphire-Starflower](https://github.com/Sapphire-Starflower))
-
-<br>
-<p align = "center">
-    <img src="https://www.gstatic.com/android/keyboard/emojikitchen/20240206/u1f4bb/u1f4bb_u1f431.png" alt="Coding Car" title="Coding Car" width="128">
-</p>
